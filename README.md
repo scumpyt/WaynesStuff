@@ -1,2 +1,3 @@
 # WaynesStuff
-This is my first README...
+I am a C++/Qt developer who has ZERO Web Development experience.
+This is my attempt to get some.
