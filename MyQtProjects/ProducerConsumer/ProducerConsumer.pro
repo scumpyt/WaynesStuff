@@ -13,7 +13,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    threadmanager.cpp
 
 HEADERS  += mainwindow.h \
-    threadsafequeue.h
+    threadsafequeue.h \
+    threadmanager.h
