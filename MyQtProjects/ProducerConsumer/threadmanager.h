@@ -58,6 +58,8 @@
 ///   sense to wait there, or, simply stop processing and ignore
 ///   the backlog. (For incoming GPS locations, for example, these
 ///   could easily just be ignored)
+/// - Note that this set-up is likely only applicable to the SPSC
+///   (Single Producer Single Consumer) situation.
 ///////////////////////////////////////////////////////////////////
 
 class ThreadManager : public QObject
