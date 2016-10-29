@@ -21,3 +21,5 @@ MyQtProjects/HACKERRANK/build-TwoChars-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-
 MyQtProjects/InterviewCode/InterviewCode.pro
 MyQtProjects/InterviewCode/main.cpp
 MyQtProjects/QtProducerConsumer/debug/moc_threadmanager.cpp
+MyQtProjects/QtWorkerThread/Makefile
+MyQtProjects/QtWorkerThread/debug/moc_mainwindow.cpp
