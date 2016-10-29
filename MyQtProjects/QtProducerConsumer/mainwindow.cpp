@@ -37,7 +37,7 @@ void MainWindow::onRunPressed()
 
 void MainWindow::onOtherPressed()
 {
-    qDebug() << "Other Pressed";
+    qDebug() << "Other Pressed! I'm not blocking!!!";
 }
 
 void MainWindow::onQuitPressed()
