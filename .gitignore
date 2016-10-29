@@ -4,6 +4,11 @@ build-HelloWorld2-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/
 MyQtProjects/ProducerConsumer/Makefile
 MyQtProjects/ProducerConsumer/debug/moc_mainwindow.cpp
 MyQtProjects/ProducerConsumer/debug/moc_threadmanager.cpp
+<<<<<<< HEAD
+=======
+MyQtProjects/QtProducerConsumer/Makefile
+MyQtProjects/QtProducerConsumer/debug/moc_mainwindow.cpp
+>>>>>>> f0f79e67c64d2dade7633c2b03aebe376f9265ff
 MyQtProjects/CodingTests/CodingTests.pro
 MyQtProjects/CodingTests/main.cpp
 MyQtProjects/HACKERRANK/AccessingInheritedFuncs/AccessingInheritedFuncs.pro
@@ -18,6 +23,9 @@ MyQtProjects/HACKERRANK/TwoChars/main.cpp
 MyQtProjects/HACKERRANK/build-TwoChars-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/Makefile
 MyQtProjects/InterviewCode/InterviewCode.pro
 MyQtProjects/InterviewCode/main.cpp
+<<<<<<< HEAD
 MyQtProjects/QtProducerConsumer/Makefile
 MyQtProjects/QtProducerConsumer/debug/moc_mainwindow.cpp
+=======
+>>>>>>> f0f79e67c64d2dade7633c2b03aebe376f9265ff
 MyQtProjects/QtProducerConsumer/debug/moc_threadmanager.cpp

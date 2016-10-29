@@ -8,7 +8,10 @@
 
 #include <future>
 #include <atomic>
+//#include <iostream>
+//#include <queue>
 #include <mutex>
+//#include <chrono>
 
 #include "ThreadSafeQueue.h"
 
@@ -74,6 +77,8 @@ public slots:
     void stop();
 
 private:
+    //bool            isRunning;
+
     std::unique_ptr<std::thread>    myProducerThread;
     std::unique_ptr<std::thread>    myConsumerThread;
 
