@@ -29,3 +29,6 @@ MyQtProjects/QtProducerConsumer/debug/moc_mainwindow.cpp
 =======
 >>>>>>> f0f79e67c64d2dade7633c2b03aebe376f9265ff
 MyQtProjects/QtProducerConsumer/debug/moc_threadmanager.cpp
+MyQtProjects/QtWorkerThread/Makefile
+MyQtProjects/QtWorkerThread/debug/moc_mainwindow.cpp
+MyQtProjects/QtWorkerThread/debug/moc_worker.cpp
