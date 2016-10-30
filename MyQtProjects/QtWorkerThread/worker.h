@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <atomic>
-//#include "threadsafequeue.h"
 #include <mutex>
 
 class Worker : public QObject
@@ -23,8 +22,7 @@ public slots:
 
 private:
     std::atomic<bool>       myIsRunning = false;
-    //ThreadSafeQueue<int>    myThreadSafeQueue;
-    std::mutex                      myMainMutex;
+    std::mutex              myMainMutex;
 };
 
 #endif // WORKER_H

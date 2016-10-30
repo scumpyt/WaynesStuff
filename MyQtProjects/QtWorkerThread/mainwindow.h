@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include "Worker.h"
-#include <memory>
+//#include <memory>
+#include <QThread>
 
 class MainWindow : public QMainWindow
 {
@@ -22,9 +23,11 @@ public slots:
 
 private:
     void myStopWork();
+    void myCleanUpWorkerThread();
 
 private:
-    std::shared_ptr<Worker> myWorker;   // Should/could this be a unique_ptr???
+    Worker*     myWorker;
+    QThread*    myWorkerThread;
 };
 
 #endif // MAINWINDOW_H
