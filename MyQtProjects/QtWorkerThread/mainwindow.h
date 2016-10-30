@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-//#include "threadmanager.h"
+#include "Worker.h"
+#include <memory>
 
 class MainWindow : public QMainWindow
 {
@@ -17,8 +18,13 @@ public slots:
     void onOtherPressed();
     void onQuitPressed();
 
+    void onUnitProduced(int value);
+
 private:
-    //ThreadManager *myManager;
+    void myStopWork();
+
+private:
+    std::shared_ptr<Worker> myWorker;   // Should/could this be a unique_ptr???
 };
 
 #endif // MAINWINDOW_H
