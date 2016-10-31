@@ -24,3 +24,4 @@ MyQtProjects/QtProducerConsumer/debug/moc_threadmanager.cpp
 MyQtProjects/QtWorkerThread/Makefile
 MyQtProjects/QtWorkerThread/debug/moc_mainwindow.cpp
 MyQtProjects/QtWorkerThread/debug/moc_worker.cpp
+MyQtProjects/WorkerThread/Makefile
