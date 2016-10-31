@@ -41,3 +41,5 @@ MyQtProjects/WorkerThread/Makefile
 MyQtProjects/ConsoleAppTemplateWithUTs/UnitTests/target_wrapper.bat
 MyQtProjects/ConsoleAppTemplateWithUTs/build/debug/theLib.exp
 >>>>>>> e59dd2f2352b8227876bb90993f283abcf107824
+MyQtProjects/NMEA_WorkerThread/UnitTests/target_wrapper.bat
+MyQtProjects/NMEA_WorkerThread/build/debug/theLib.exp
