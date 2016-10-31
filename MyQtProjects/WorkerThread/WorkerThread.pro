@@ -1,21 +1,9 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2016-10-31T12:33:35
-#
-#-------------------------------------------------
+TEMPLATE = subdirs
 
-QT       += core gui
+SUBDIRS += \
+    main \
+    UnitTests \
+    cppSrc
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = WorkerThread
-TEMPLATE = app
-
-
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    threadmanager.cpp
-
-HEADERS  += mainwindow.h \
-    threadmanager.h \
-    threadsafequeue.h
+main.depends = cppSrc
+UnitTests.depends = cppSrc
