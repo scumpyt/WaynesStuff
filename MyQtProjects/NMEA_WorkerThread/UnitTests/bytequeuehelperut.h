@@ -16,6 +16,15 @@ private slots:
     void cleanupTestCase();
 
     void testPrintQueue();
+    void testQAppend();
+    void testQClear();
+    void testQRemove();
+    void testQSize();
+    void testIsQueueEmpty();
+    void testQMid();
+    void testQAt();
+    void testQIndexOf();
+    void testQIndexOf_2();
 };
 
 #endif // BYTEQUEUEHELPERUT_H
