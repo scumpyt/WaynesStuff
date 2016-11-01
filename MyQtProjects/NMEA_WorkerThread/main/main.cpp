@@ -1,16 +1,11 @@
-#include <QCoreApplication>
-#include <iostream>
-
-#include "bytequeuehelper.h"
+#include "mainwindow.h"
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
-
-    std::cout << "Hello World!" << std::endl;
-
-    ByteQueueHelper bqh;
-    bqh.printQueue();
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
     return a.exec();
 }

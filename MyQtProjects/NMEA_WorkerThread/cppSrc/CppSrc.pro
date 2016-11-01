@@ -16,11 +16,14 @@ TEMPLATE = lib
 DEFINES += CPPSRC_LIBRARY
 
 SOURCES += \
-    bytequeuehelper.cpp
+    bytequeuehelper.cpp \
+    nmeathreadmanager.cpp
 
 HEADERS +=\
     cppsrc_global.h \
-    bytequeuehelper.h
+    bytequeuehelper.h \
+    threadsafequeue.h \
+    nmeathreadmanager.h
 
 unix {
     target.path = /usr/lib

@@ -14,6 +14,9 @@ TEMPLATE = app
     error("Couldn't find the common.pri file")
 }
 
+HEADERS += \
+    bytequeuehelperut.h
+
 SOURCES += \
     mainut.cpp \
     bytequeuehelperut.cpp
@@ -26,5 +29,3 @@ QMAKE_RPATHDIR += $$DESTDIR
 
 LIBS += -L$$DESTDIR -ltheLib
 
-HEADERS += \
-    bytequeuehelperut.h

@@ -6,4 +6,4 @@ SUBDIRS += \
     UnitTests
 
 main.depends = CppSrc
-#UnitTests.depends = CppSrc
+UnitTests.depends = CppSrc

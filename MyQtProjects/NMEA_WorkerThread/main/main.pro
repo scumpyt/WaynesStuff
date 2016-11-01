@@ -1,5 +1,9 @@
 QT += core
-QT -= gui
+#QT -= gui  # For CONSOLE Apps...
+
+# For widget apps...
+QT += gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
@@ -9,17 +13,23 @@ CONFIG += c++11
 
 INCLUDEPATH += ../CppSrc
 
-TARGET = main
-CONFIG += console
-CONFIG -= app_bundle
+#TARGET = main
+#CONFIG += console
+#CONFIG -= app_bundle
 
-TEMPLATE = app
-
-SOURCES += main.cpp
+#TEMPLATE = app
 
 DISTFILES += \
     ../common.pri
 
+###DEFINES += SRCDIR=\\\"$$PWD/\\\"
+
 QMAKE_RPATHDIR += $$DESTDIR
 
 LIBS += -L$$DESTDIR -ltheLib
+
+SOURCES += main.cpp \
+    mainwindow.cpp
+
+HEADERS += \
+    mainwindow.h
