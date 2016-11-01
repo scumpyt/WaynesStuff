@@ -17,6 +17,7 @@ NMEAThreadManager::~NMEAThreadManager()
 
 void NMEAThreadManager::theProducer ()
 {
+////////////////////////////////// ORIG, working loop ////////////////////////////////
     std::atomic<int> itr = 0;
     while(myIsRunning)
     {
@@ -40,6 +41,7 @@ void NMEAThreadManager::theProducer ()
         // Note. itr should possibly be checked that it doesn't wrap,
         //       but is not really important here.
     }
+//////////////////////////////////////////////////////////////////////////////////////
 }
 
 void NMEAThreadManager::theConsumer ()
@@ -98,12 +100,26 @@ void NMEAThreadManager::stop()
     // Wait for the producer to finish up first...
     if (myProducerThread && myProducerThread->joinable())
     {
+        std::cout << "JOINING Producer on thread "
+                  << std::this_thread::get_id() << std::endl;
         myProducerThread->join();
+    }
+    else
+    {
+        std::cout << "Producer NOT Joinable on thread "
+                  << std::this_thread::get_id() << std::endl;
     }
 
     // Then wait for the consumer to finish up...
     if (myConsumerThread && myConsumerThread->joinable())
     {
+        std::cout << "JOINING Consumer on thread "
+                  << std::this_thread::get_id() << std::endl;
         myConsumerThread->join();
+    }
+    else
+    {
+        std::cout << "COnsumer NOT Joinable on thread "
+                  << std::this_thread::get_id() << std::endl;
     }
 }

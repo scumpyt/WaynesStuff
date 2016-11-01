@@ -41,7 +41,9 @@ void MainWindow::onRunPressed()
 
 void MainWindow::onOtherPressed()
 {
-    qDebug() << "Other Pressed";
+    //qDebug() << "Other Pressed";
+    std::cout << "Other Pressed (not blocking!!) on thread ID: "
+              << std::this_thread::get_id() << std::endl;
 }
 
 void MainWindow::onQuitPressed()
