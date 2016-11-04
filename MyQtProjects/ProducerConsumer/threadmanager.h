@@ -39,16 +39,23 @@
 /// happenes if one takes longer than the other. This is an excellent,
 /// and recommended way of testing basic thread logic.
 ///
+/// NOTE - If the producer stops producing for any reason, this
+/// framework will BLOCK the Consumer indefinitely!!! I suppose that's
+/// the way it's intended to work, but it bugs me.
+///
+/// NOTE - If you needed to get the data 'produced' into the main thread
+/// any reason, I've found that frustratingly hard to do! (Where are
+/// signals and slots!!!) If you replace the Consumer thread with a loop
+/// directly in the main thread, then you run the very real risk of
+/// blocking (see above). If you use a polling loop, then the main thread
+/// is chewing up resouces doing the polling. Not sure how to solve this yet.
+///
 /// Further questions:
 /// - It might be a better idea to force the dtor of the threads
 ///   right after we're finished with them in the 'stop()' method.
 /// - Where we create the 2 threads in the 'run()' method, it might
 ///   be more exception proof to create the threads as one step,
 ///   and then pass them into the reset as a second.
-/// - The actual need for a consumer thread is optional. If you
-///   simply need to take the 'produced' data and do something
-///   simple with it, this could be replaced with logic directly
-///   int the main GUI thread.
 /// - If the consumer takes longer than the producer, the queue
 ///   will have a (potentially large) backlog, when we get to the
 ///   'stop()' method. You will have to decide whether it makes

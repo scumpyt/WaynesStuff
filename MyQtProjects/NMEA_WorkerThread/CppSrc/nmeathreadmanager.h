@@ -35,6 +35,8 @@ private:
      ThreadSafeQueue<int>            myThreadSafeQueue;
      std::atomic<bool>               myIsRunning = false;
      std::mutex                      myMainMutex;
+
+     int                             myVal;
 };
 
 #endif // NMEATHREADMANAGER_H

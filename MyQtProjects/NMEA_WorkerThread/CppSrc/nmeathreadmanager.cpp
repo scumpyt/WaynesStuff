@@ -5,6 +5,7 @@
 NMEAThreadManager::NMEAThreadManager(QObject *parent)
     : QObject(parent)
     , myIsRunning(false)
+    , myVal(0)
 {
     std::cout << "NMEAThreadManager ctor called..." << std::endl;
 }
@@ -29,12 +30,20 @@ void NMEAThreadManager::theProducer ()
 
         // Push the "produced" value onto the queue...
         myThreadSafeQueue.push(++itr);
+//        {
+//            std::unique_lock<std::mutex> lock(myMainMutex);
+//            if (itr <= 100)
+//            {
+//                ++itr;          // Only 'produce' till we get to 100
+//                myThreadSafeQueue.push(itr);
+//            }
+//        }
 
         // Diagnostic printout only...
         if ((itr % 10) == 0)
         {
             std::unique_lock<std::mutex> lock(myMainMutex);       // Make cout atomic
-            std::cout << "PUSH " << itr << " on thread ID: "
+            std::cout << "CUR ITR = " << itr << " on thread ID: "
                       << std::this_thread::get_id() << std::endl;
         }
 
@@ -52,24 +61,19 @@ void NMEAThreadManager::theConsumer ()
     //        the check for empty(), here.
     while(myIsRunning || !myThreadSafeQueue.empty())
     {
-        int val;
+        //int val;
 
         // Wait on new values, and 'pop' when available...
-        myThreadSafeQueue.waitAndPop(val);
-
-        // If T was a large object, this should be used instead of the above...
-        // std::shared_ptr<T> ptr = waitAndPop();
-
-        // Here, we would 'do something' with the new values...
+        myThreadSafeQueue.waitAndPop(myVal);    // NOTE - this will BLOCK the Consumer thread, if no data in queue!!!
 
         // Simulate this taking some time...
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
         // Diagnostic printout only...
-        if ((val % 10) == 0)
+        if ((myVal % 10) == 0)
         {
             std::unique_lock<std::mutex> lock(myMainMutex);
-            std::cout << "POP " << val << " on thread ID: "
+            std::cout << "CUR VAL = " << myVal << " on thread ID: "
                       << std::this_thread::get_id() << std::endl;
         }
     }
@@ -79,15 +83,18 @@ void NMEAThreadManager::run()
 {
     if (myIsRunning) return;
 
+    myVal = 0;  // initialize...
+
     std::cout << "Running...";
     std::cout << "... on thread ID: "
               << std::this_thread::get_id() << std::endl;
 
     myIsRunning = true;
 
-    // Create and start the 2 theads...
+    // Create and start the Producer thread...
     myProducerThread.reset(new std::thread(&NMEAThreadManager::theProducer, this));
     myConsumerThread.reset(new std::thread(&NMEAThreadManager::theConsumer, this));
+
 }
 
 void NMEAThreadManager::stop()
