@@ -1,12 +1,12 @@
 #include <QCoreApplication>
 #include <QtTest/QtTest>
 
-#include "bytequeuehelperut.h"
+#include "pathfinderut.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-\
+
     int retVal = 0;
 
     // If any app-specific initialization needed, do it here...
@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
     // All tests go inside this if...
     if ( initOK )
     {
-        ByteQueueHelperUT byteQueueHelperUT;
-        retVal += QTest::qExec( &byteQueueHelperUT, argc, argv );
+        PathFinderUT pathFinderUT;
+        retVal += QTest::qExec( &pathFinderUT, argc, argv );
     }
 
     qDebug() << "=====================================================================";

@@ -16,7 +16,7 @@ TEMPLATE = app
 
 SOURCES += \
     mainut.cpp \
-    bytequeuehelperut.cpp
+    pathfinderut.cpp
 
 INCLUDEPATH += ../CppSrc
 
@@ -27,4 +27,4 @@ QMAKE_RPATHDIR += $$DESTDIR
 LIBS += -L$$DESTDIR -ltheLib
 
 HEADERS += \
-    bytequeuehelperut.h
+    pathfinderut.h

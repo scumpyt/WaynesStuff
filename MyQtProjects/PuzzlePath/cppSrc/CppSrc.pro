@@ -16,11 +16,11 @@ TEMPLATE = lib
 DEFINES += CPPSRC_LIBRARY
 
 SOURCES += \
-    bytequeuehelper.cpp
+    pathfinder.cpp
 
 HEADERS +=\
     cppsrc_global.h \
-    bytequeuehelper.h
+    pathfinder.h
 
 unix {
     target.path = /usr/lib

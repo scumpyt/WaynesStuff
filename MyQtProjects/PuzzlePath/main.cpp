@@ -1,8 +1,23 @@
-#include <QCoreApplication>
+#include <iostream>
+#include <string>
+//#include "bytequeuehelper.h"
 
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
+//    std::cout << "Hello World!" << std::endl;
 
-    return a.exec();
+//    ByteQueueHelper bqh;
+//    bqh.printQueue();
+
+    //std::string inFileName;
+    //std::cout << "Enter input Puzzle File name: ";
+    std::cout << "Hello World!" << std::endl;
+
+//    std::cin  >> inFileName;
+//    std::cout << std::endl;
+
+//    std::cout << "FILE NAME = " << inFileName << std::endl;
+
+    return 0;
 }
+
