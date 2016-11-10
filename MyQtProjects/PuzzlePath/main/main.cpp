@@ -15,7 +15,7 @@ int main()
     //    std::cin  >> inFileName;
     //    std::cout << std::endl;
 
-    inFileName = "Puzzle2.txt";
+    inFileName = "Puzzle1.txt";
 
     std::string curLine;
     std::ifstream inFile ("../../" + inFileName);   // Actual file up 2 levels from exe...
@@ -55,7 +55,7 @@ int main()
     // Now expand outward...
     while (true)
     {
-        if (pf.markNeighbors(targetNode.first, targetNode.second, curDist)) break;
+        if (pf.markNeighbors(curDist)) break;
         ++curDist;
     }
 

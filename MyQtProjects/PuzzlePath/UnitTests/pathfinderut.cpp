@@ -26,6 +26,8 @@ void PathFinderUT::cleanupTestCase()
 void PathFinderUT::init()
 {
     // Runs before each test...
+
+    // Read Puzzle1.txt as a default test
     std::string curLine;
 
     std::ifstream inFile ("../../Puzzle1.txt");
@@ -45,36 +47,35 @@ void PathFinderUT::cleanup()
     inGrid.clear();
 }
 
-void PathFinderUT::testIsValidChar()
+void PathFinderUT::testBasics1()
 {
+    // Using default Puzzle1.txt
     PathFinder pf(inGrid);
+    QVERIFY(pf.validateInputGrid());
+    QVERIFY(pf.getNRows() == 4);
+    QVERIFY(pf.getNCols() == 10);
+    QVERIFY(pf.getTotalLength() == (pf.getNRows()*pf.getNCols()));
 
-    QVERIFY(pf.isValidChar(0)  == false);   // Top row all X's
-    QVERIFY(pf.isValidChar(9)  == false);
-    QVERIFY(pf.isValidChar(10) == false);   // Second Row - all but edges
-    QVERIFY(pf.isValidChar(11) == true);
-    QVERIFY(pf.isValidChar(12) == true);
-    QVERIFY(pf.isValidChar(13) == true);
-    QVERIFY(pf.isValidChar(14) == true);
-    QVERIFY(pf.isValidChar(15) == true);
-    QVERIFY(pf.isValidChar(16) == true);
-    QVERIFY(pf.isValidChar(17) == true);
-    QVERIFY(pf.isValidChar(18) == true);
-    QVERIFY(pf.isValidChar(19) == false);
-    QVERIFY(pf.isValidChar(20) == false);   // Third row...
-    QVERIFY(pf.isValidChar(21) == true);
+    std::pair<int,int> src = pf.getSourceNode();
+    std::pair<int,int> tgt = pf.getTargetNode();
 
-    QVERIFY(pf.isValidChar(21222) == false);    // index out of range tests
-    QVERIFY(pf.isValidChar(-14) == false);
+    QVERIFY(src.first == 1 && src.second == 3);
+    QVERIFY(tgt.first == 2 && tgt.second == 1);
 }
 
-void PathFinderUT::testBuildEdgeGraph()
+void PathFinderUT::testBasics2()
 {
-//    PathFinder pf(inGrid);
-//    //pf.printInGrid();
-//    //QVERIFY (1 == 0);
+    // Using empty inGrid...
+    std::vector<std::string> emptyGrid;
+    PathFinder pf(emptyGrid);
+//    QVERIFY(pf.validateInputGrid() == false);
+//    QVERIFY(pf.getNRows() == 0);
+//    QVERIFY(pf.getNCols() == 0);
+//    QVERIFY(pf.getTotalLength() == (pf.getNRows()*pf.getNCols()));
 
-//    std::vector< std::vector<edge> > theEdges = pf.buildEdgeGraph();
+//    std::pair<int,int> src = pf.getSourceNode();
+//    std::pair<int,int> tgt = pf.getTargetNode();
 
-//    QVERIFY (theEdges.size() == pf.getTotalLength()); // Should have as many nodes as inGrid...
+//    QVERIFY(src.first == -1 && src.second == -1);
+//    QVERIFY(tgt.first == -1 && tgt.second == -1);
 }

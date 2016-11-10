@@ -17,8 +17,8 @@ private slots:
     void cleanup();
     void cleanupTestCase();
 
-    void testIsValidChar();
-    void testBuildEdgeGraph();
+    void testBasics1();
+    void testBasics2();
 
 private:
     std::vector<std::string> inGrid;

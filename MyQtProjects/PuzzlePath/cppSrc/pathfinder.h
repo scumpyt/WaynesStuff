@@ -14,7 +14,6 @@ public:
     int                                 getNRows() const;
     int                                 getNCols() const;
     int                                 getTotalLength() const;
-    int                                 findNode(char c) const;
     bool                                findNode(char c, int& row, int& col) const;
 
     bool                                validateInputGrid();
@@ -22,8 +21,9 @@ public:
     void                                setGridNode(int row, int col, int val);
 
     char                                getChar(int row, int col);
-    bool                                isValidChar(int indx) const;
-    bool                                isValidNode(int row, int col) const;
+    bool                                isValidNode (int row, int col) const;
+    bool                                isUnMarked  (int row, int col) const;
+    bool                                isTargetNode(int row, int col) const;
 
     void                                printInGrid() const;
     void                                printGrid();
@@ -31,8 +31,7 @@ public:
     std::pair<int,int>                  getSourceNode() const;
     std::pair<int,int>                  getTargetNode() const;
 
-
-    bool                                markNeighbors(int targetRow, int targetCol, int curDist);
+    bool                                markNeighbors(int curDist);
     std::vector<std::pair<int,int>>     extractPath(int targetRow, int targetCol,
                                                     int startRow, int startCol);
     bool                                searchNearNeighbors(int& curRow, int& curCol, int curDist);
@@ -48,8 +47,6 @@ private:
     int                                 myNRows;
     int                                 myNCols;
     int                                 myTotalLength;
-//    int                                 mySourceNode;
-//    int                                 myTargetNode;
 
     std::pair<int,int>                  mySourceNode;
     std::pair<int,int>                  myTargetNode;

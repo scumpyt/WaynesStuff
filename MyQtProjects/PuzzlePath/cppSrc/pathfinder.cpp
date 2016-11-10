@@ -5,20 +5,25 @@
 #include <array>
 
 PathFinder::PathFinder(const std::vector<std::string>& inGrid)
-    : myInGrid(inGrid)
+    : myInGrid(inGrid), myNRows(0), myNCols(0), myTotalLength(0)
+    , mySourceNode(std::make_pair(-1,-1))
+    , myTargetNode(std::make_pair(-1,-1))
 {
-    myNRows       = (int)myInGrid.size();
-    myNCols       = (int)myInGrid.at(0).length();
+    if (!myInGrid.empty())
+    {
+        myNRows       = (int)myInGrid.size();
+        myNCols       = (int)myInGrid.at(0).length();
 
-    myTotalLength = myNRows * myNCols;
+        myTotalLength = myNRows * myNCols;
 
-    mySourceNode.first=-1, mySourceNode.second=-1;
-    findNode('A', mySourceNode.first, mySourceNode.second);
+        mySourceNode.first=-1, mySourceNode.second=-1;
+        findNode('A', mySourceNode.first, mySourceNode.second);
 
-    myTargetNode.first=-1, myTargetNode.second=-1;
-    findNode('B', myTargetNode.first, myTargetNode.second);
+        myTargetNode.first=-1, myTargetNode.second=-1;
+        findNode('B', myTargetNode.first, myTargetNode.second);
 
-    myBuildInternalGrid();
+        myBuildInternalGrid();
+    }
 }
 
 void PathFinder::myBuildInternalGrid()
@@ -81,23 +86,6 @@ bool PathFinder::validateInputGrid()
     return true;
 }
 
-int PathFinder::findNode(char inChar) const
-{
-    int node = -1;
-    foreach (auto str, myInGrid)
-    {
-        foreach (auto c, str)
-        {
-            ++node;
-            if (c == inChar)
-            {
-                return node;
-            }
-        }
-    }
-    return node;
-}
-
 bool PathFinder::findNode(char inChar, int& row, int& col) const
 {
     row = -1;
@@ -121,25 +109,13 @@ bool PathFinder::findNode(char inChar, int& row, int& col) const
 
 void PathFinder::setGridNode(int row, int col, int val)
 {
-    // Assume valid node checking is done outside...
-    myGrid[row][col] = val;
+    if (isValidNode(row, col)) myGrid[row][col] = val;
 }
 
 char PathFinder::getChar(int row, int col)
 {
-    return myInGrid.at(row).at(col);
-}
-
-bool PathFinder::isValidChar(int indx) const
-{
-    if (indx >=0 && indx < myTotalLength)
-    {
-        // Convert indx into a char at a specific line/indx...
-        int lineNumber = (int)(indx/myNRows);
-        int charIndx   = indx - (lineNumber * myNRows);
-        return (myInGrid.at(lineNumber).at(charIndx) != 'X');
-    }
-    return false;
+    if (isValidNode(row, col)) return myInGrid.at(row).at(col);
+    return 'X';
 }
 
 void PathFinder::printInGrid() const
@@ -175,8 +151,13 @@ std::pair<int,int> PathFinder::getTargetNode() const
     return myTargetNode;
 }
 
-bool PathFinder::markNeighbors(int targetRow, int targetCol, int curDist)
+bool PathFinder::markNeighbors(int curDist)
 {
+    // For every node that matches our current distance, go to each
+    // that node's near neighbors, and, if it's valid and unmarked,
+    // update it's value to curDist+1. Once we make it to the target
+    // node, break out.
+
     int nextDist = curDist+1;
 
     bool ptsMarked   = false;
@@ -187,56 +168,44 @@ bool PathFinder::markNeighbors(int targetRow, int targetCol, int curDist)
         {
             if (myGrid[row][col] == curDist)
             {
-                if (row-1 >= 0)
+                if (isValidNode(row-1, col) && isUnMarked(row-1, col))
                 {
-                    if (myGrid[row-1][col] == -1)
+                    ptsMarked = true;
+                    myGrid[row-1][col] = nextDist;
+                    if (isTargetNode(row-1, col))
                     {
-                        ptsMarked = true;
-                        myGrid[row-1][col] = nextDist;
-                        if (row-1 == targetRow && col == targetCol)
-                        {
-                            targetFound = true;
-                            break;
-                        }
+                        targetFound = true;
+                        break;
                     }
                 }
-                if (row+1 < myNRows)
+                if (isValidNode(row+1, col) && isUnMarked(row+1, col))
                 {
-                    if (myGrid[row+1][col] == -1)
+                    ptsMarked = true;
+                    myGrid[row+1][col] = nextDist;
+                    if (isTargetNode(row+1, col))
                     {
-                        ptsMarked = true;
-                        myGrid[row+1][col] = nextDist;
-                        if (row+1 == targetRow && col == targetCol)
-                        {
-                            targetFound = true;
-                            break;
-                        }
+                        targetFound = true;
+                        break;
                     }
                 }
-                if (col-1 >= 0)
+                if (isValidNode(row, col-1) && isUnMarked(row, col-1))
                 {
-                    if (myGrid[row][col-1] == -1)
+                    ptsMarked = true;
+                    myGrid[row][col-1] = nextDist;
+                    if (isTargetNode(row, col-1))
                     {
-                        ptsMarked = true;
-                        myGrid[row][col-1] = nextDist;
-                        if (row == targetRow && col-1 == targetCol)
-                        {
-                            targetFound = true;
-                            break;
-                        }
+                        targetFound = true;
+                        break;
                     }
                 }
-                if (col+1 < myNCols)
+                if (isValidNode(row, col+1) && isUnMarked(row, col+1))
                 {
-                    if (myGrid[row][col+1] == -1)
+                    ptsMarked = true;
+                    myGrid[row][col+1] = nextDist;
+                    if (isTargetNode(row, col+1))
                     {
-                        ptsMarked = true;
-                        myGrid[row][col+1] = nextDist;
-                        if (row == targetRow && col+1 == targetCol)
-                        {
-                            targetFound = true;
-                            break;
-                        }
+                        targetFound = true;
+                        break;
                     }
                 }
             }
@@ -244,8 +213,6 @@ bool PathFinder::markNeighbors(int targetRow, int targetCol, int curDist)
         if (targetFound) break;
     }
 
-//    std::cout << "targetFound = " << targetFound << "\n";
-//    std::cout << "ptsMarked   = " << ptsMarked << "\n";
     if (targetFound || !ptsMarked) return true;
     return false;
 }
@@ -323,6 +290,16 @@ bool PathFinder::isValidNode(int row, int col) const
         }
     }
     return false;
+}
+
+bool PathFinder::isUnMarked  (int row, int col) const
+{
+    return myGrid[row][col] == -1;
+}
+
+bool PathFinder::isTargetNode(int row, int col) const
+{
+    return (row == myTargetNode.first && col == myTargetNode.second);
 }
 
 std::vector<std::string> PathFinder::getCopyOfInputGrid() const
