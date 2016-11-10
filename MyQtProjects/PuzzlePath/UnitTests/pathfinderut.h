@@ -22,6 +22,11 @@ private slots:
     void testFindNode();
     void testGetChar();
     void testSearchNode();
+    void testValidateInputFile1();
+    void testValidateInputFile2();
+    void testExtractPath1();
+    void testExtractPath2();
+    void testExtractPath3();
 
 private:
     std::vector<std::string> inGrid;

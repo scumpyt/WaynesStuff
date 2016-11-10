@@ -25,15 +25,10 @@ public:
     bool                                isUnMarked  (int row, int col) const;
     bool                                isTargetNode(int row, int col) const;
 
-    void                                printInGrid() const;
-    void                                printGrid();
-
     std::pair<int,int>                  getSourceNode() const;
     std::pair<int,int>                  getTargetNode() const;
 
     bool                                markNeighbors(int curDist);
-//    std::vector<std::pair<int,int>>     extractPath(int targetRow, int targetCol,
-//                                                    int startRow, int startCol);
 
     std::vector<std::pair<int,int>>     extractPath();
 

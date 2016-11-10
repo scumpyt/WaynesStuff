@@ -10,21 +10,21 @@ int main()
 {
     // Step 1: Read, store and echo input file...
     std::string inFileName;
-    //    std::cout << "Enter input Puzzle File name: ";
+    std::cout << "Enter input Puzzle File name: ";
 
-    //    std::cin  >> inFileName;
-    //    std::cout << std::endl;
-
-    inFileName = "Puzzle2.txt";
+    std::cin  >> inFileName;
+    std::cout << std::endl;
 
     std::string curLine;
-    std::ifstream inFile ("../../" + inFileName);   // Actual file up 2 levels from exe...
+    std::string cwd ("");   // If you need to adjust your working I/O dir...
+    std::ifstream inFile (cwd + inFileName);
     if (!inFile.is_open())
     {
         std::cout << "Unable to open file: " << inFileName << std::endl;
         return -1;
     }
 
+    std::cout << "-----  Input File   -----\n";
     std::vector<std::string> inTextLines;
     while (std::getline (inFile, curLine))
     {
@@ -32,6 +32,7 @@ int main()
         std::cout << *(inTextLines.end()-1) << "\n";     // Echo...
     }
     inFile.close();
+    std::cout << "-------------------------\n";
 
     // Step 2: Initialize and validate our PathFinder helper object
     PathFinder pf(inTextLines);
@@ -63,6 +64,23 @@ int main()
         std::cout << str << "\n";
     }
     std::cout << "-------------------------\n";
+
+    // Step 6: Output solution as text file...
+    std::string solFileName = cwd + "out_" + inFileName;
+    std::ofstream oFile (solFileName);
+    if (oFile.is_open())
+    {
+        foreach (auto str, solutionFile)
+        {
+            oFile << str << "\n";
+        }
+        oFile.close();
+    }
+    else
+    {
+        std::cerr << "Error! Unable to open output file!" << std::endl;
+        return -1;
+    }
 
     return 0;
 }

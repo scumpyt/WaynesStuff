@@ -120,3 +120,96 @@ void PathFinderUT::testSearchNode()
     pf.setGridNode(1,3,12345);
     QVERIFY(pf.searchNode(1,3,12345) == true);
 }
+
+void PathFinderUT::testValidateInputFile1()
+{
+    PathFinder pf(inGrid);
+    QVERIFY(pf.validateInputFile());
+}
+
+void PathFinderUT::testValidateInputFile2()
+{
+    std::vector<std::string> file;
+    file.emplace_back(std::string("X X X"));
+    file.emplace_back(std::string("X XAX"));
+    file.emplace_back(std::string("X X X"));
+    file.emplace_back(std::string("X X X"));
+    file.emplace_back(std::string("X X X"));
+
+    PathFinder pf (file);
+    QVERIFY(pf.validateInputFile() == false);   // No target
+}
+
+void PathFinderUT::testExtractPath1()
+{
+    PathFinder pf(inGrid);
+    std::vector<std::pair<int,int>> outPath = pf.extractPath();
+    QVERIFY(outPath.size() == 2);
+
+    // There are 2, equal possibilities here...
+    // Path is going target to source
+    bool match = false;
+    if ( (outPath.at(0).first == 2 && outPath.at(0).second == 2) &&
+         (outPath.at(1).first == 2 && outPath.at(1).second == 3) )
+    {
+        match = true;
+    }
+
+    if (!match &&
+        (outPath.at(0).first == 1 && outPath.at(0).second == 1) &&
+        (outPath.at(1).first == 1 && outPath.at(1).second == 2) )
+    {
+        match = true;
+    }
+    QVERIFY(match);
+}
+
+void PathFinderUT::testExtractPath2()
+{
+    // Read Puzzle2.txt this time...
+    std::vector<std::string> puzzle2;
+    std::string curLine;
+
+    std::ifstream inFile ("../../Puzzle2.txt");
+    QVERIFY (inFile.is_open());
+
+    while (std::getline (inFile, curLine))
+    {
+        puzzle2.emplace_back(curLine);
+        //std::cout << *(inGrid.end()-1) << "\n";
+    }
+    inFile.close();
+
+
+    PathFinder pf(puzzle2);
+    std::vector<std::pair<int,int>> outPath = pf.extractPath();
+    QVERIFY(outPath.size() == 9);
+
+    // Only 1 possibility here...
+    QVERIFY ( (outPath.at(0).first == 2 && outPath.at(0).second == 2) &&
+              (outPath.at(1).first == 2 && outPath.at(1).second == 3) &&
+              (outPath.at(2).first == 2 && outPath.at(2).second == 4) &&
+              (outPath.at(3).first == 2 && outPath.at(3).second == 5) &&
+              (outPath.at(4).first == 2 && outPath.at(4).second == 6) &&
+              (outPath.at(5).first == 3 && outPath.at(5).second == 6) &&
+              (outPath.at(6).first == 3 && outPath.at(6).second == 7) &&
+              (outPath.at(7).first == 4 && outPath.at(7).second == 7) &&
+              (outPath.at(8).first == 5 && outPath.at(8).second == 7)
+            );
+}
+
+void PathFinderUT::testExtractPath3()
+{
+    std::vector<std::string> file;
+    file.emplace_back(std::string("X X X"));
+    file.emplace_back(std::string("X XAX"));
+    file.emplace_back(std::string("X X X"));
+    file.emplace_back(std::string("XBX X"));
+    file.emplace_back(std::string("X X X"));
+
+    PathFinder pf (file);
+    QVERIFY(pf.validateInputFile());
+
+    std::vector<std::pair<int,int>> outPath = pf.extractPath();
+    QVERIFY(outPath.size() == 0);   // Target is not reachable...
+}

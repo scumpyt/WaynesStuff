@@ -118,29 +118,6 @@ char PathFinder::getChar(int row, int col)
     return 'X';
 }
 
-void PathFinder::printInGrid() const
-{
-    std::cout << "----------------------------\n";
-    foreach (auto str, myInFile)
-    {
-        std::cout << str << "\n";
-    }
-    std::cout << "----------------------------\n";
-}
-
-void PathFinder::printGrid()
-{
-    for (int row=0; row<myNRows; ++row)
-    {
-        for (int col=0; col<myNCols; ++col)
-        {
-            std::cout << myGrid[row][col] << ", ";
-        }
-        std::cout << "\n";
-    }
-    std::cout << "\n";
-}
-
 std::pair<int,int> PathFinder::getSourceNode() const
 {
     return mySourceNode;
