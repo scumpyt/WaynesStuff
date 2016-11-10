@@ -8,7 +8,7 @@
 
 int main()
 {
-    // Get input file name...
+    // Step 1: Read, store and echo input file...
     std::string inFileName;
     //    std::cout << "Enter input Puzzle File name: ";
 
@@ -17,7 +17,6 @@ int main()
 
     inFileName = "Puzzle2.txt";
 
-    // Read, store and echo input file...
     std::string curLine;
     std::ifstream inFile ("../../" + inFileName);   // Actual file up 2 levels from exe...
     if (!inFile.is_open())
@@ -30,100 +29,61 @@ int main()
     while (std::getline (inFile, curLine))
     {
         inGrid.emplace_back(curLine);
-        std::cout << *(inGrid.end()-1) << "\n";
+        std::cout << *(inGrid.end()-1) << "\n";     // Echo...
     }
     inFile.close();
 
+    // Step 2: Initialize and validate our PathFinder helper object
     PathFinder pf(inGrid);
 
-    int nRows = pf.getNRows();
-    int nCols = pf.getNCols();
-
-    int** grid = new int* [nRows];
-    for (int i=0; i<nRows; ++i)
+    if (!pf.validateInputGrid())
     {
-        grid[i] = new int[nCols];
+        std::cerr << "Error! Invalid Input file!" << std::endl;
+        return -1;
     }
 
-    for (int row=0; row<nRows; ++row)
-    {
-        for (int col=0; col<nCols; ++col)
-        {
-            if (pf.getChar(row, col) == 'X')
-            {
-                grid[row][col] = -9;
-            }
-            else
-            {
-                grid[row][col] = -1;
-            }
-        }
-    }
+    std::pair<int,int> sourceNode = pf.getSourceNode();
+    std::pair<int,int> targetNode = pf.getTargetNode();
 
-    //pf.printGrid(grid);
-
-
-    int startRow, startCol;
-    if (!pf.findNode('A', startRow, startCol))
-    {
-        std::cerr << "Error! Unable to find start node!" << std::endl;
-    }
-
-    int targetRow, targetCol;
-    if (!pf.findNode('B', targetRow, targetCol))
-    {
-        std::cerr << "Error! Unable to find target node!" << std::endl;
-    }
-
-    std::cout << "Str R/C = " << startRow  << " / " << startCol << std::endl;
-    std::cout << "End R/C = " << targetRow << " / " << targetCol << std::endl;
-
-    // Start at 'A'
+    // Step 3: Starting with dist=0 at the source node, expand outward
+    //         marking each accessible, near neighbor with dist+1.
+    //         repeat until the target is reached, or, no more neighbors
+    //         can be marked.
     int curDist = 0;
-    grid[startRow][startCol] = curDist;
-    //pf.printGrid(grid);
+    pf.setGridNode(sourceNode.first, sourceNode.second, curDist);
 
-    // expand grid...
+    // Now expand outward...
     while (true)
     {
-        if (pf.markNeighbors(grid, targetRow, targetCol, curDist)) break;
+        if (pf.markNeighbors(targetNode.first, targetNode.second, curDist)) break;
         ++curDist;
-
-        //pf.printGrid(grid);
     }
 
-    pf.printGrid(grid);
-
-    // Now backtrack to extract path, going from target to source...
-    std::vector<std::pair<int,int>> outPath = pf.extractPath(grid, targetRow, targetCol,
-                                                             startRow, startCol);
+    // Step 4: Go to the target node, and find the neighbor that has a dist
+    //         of 1 less than the previous, and add that node to the output
+    //         path. Repeat until you have reached the source node.
+    std::vector<std::pair<int,int>> outPath = pf.extractPath(targetNode.first, targetNode.second,
+                                                             sourceNode.first, sourceNode.second);
     if (outPath.empty())
     {
         std::cerr << "Error! Unable to extract path!" << std::endl;
         return -1;
     }
 
-    foreach (auto node, outPath)
-    {
-        std::cout << node.first << " / " << node.second << "\n";
-    }
-
-    // Copy input file to solution file
+    // Step 5: Copy input file to solution file, and add dots at every path node.
     std::vector<std::string> solutionFile = pf.getCopyOfInputGrid();
-
-    // then add '.' (dots) at each path node...
     foreach (auto node, outPath)
     {
         solutionFile.at(node.first).at(node.second) = '.';
     }
 
-    // Echo solution file...
-    std::cout << "----------------------------\n";
+    // Step 6: Echo solution file...
+    std::cout << "----- Solution File -----\n";
     foreach (auto str, solutionFile)
     {
         std::cout << str << "\n";
     }
-    std::cout << "----------------------------\n";
+    std::cout << "-------------------------\n";
 
     return 0;
 }

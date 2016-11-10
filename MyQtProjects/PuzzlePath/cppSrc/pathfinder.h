@@ -17,31 +17,44 @@ public:
     int                                 findNode(char c) const;
     bool                                findNode(char c, int& row, int& col) const;
 
+    bool                                validateInputGrid();
+
+    void                                setGridNode(int row, int col, int val);
+
     char                                getChar(int row, int col);
     bool                                isValidChar(int indx) const;
     bool                                isValidNode(int row, int col) const;
 
     void                                printInGrid() const;
-    void                                printGrid(int** grid);
+    void                                printGrid();
 
-    bool                                markNeighbors(int** grid, int targetRow, int targetCol, int curDist);
-    std::vector<std::pair<int,int>>     extractPath(int** grid,
-                                                    int targetRow, int targetCol,
+    std::pair<int,int>                  getSourceNode() const;
+    std::pair<int,int>                  getTargetNode() const;
+
+
+    bool                                markNeighbors(int targetRow, int targetCol, int curDist);
+    std::vector<std::pair<int,int>>     extractPath(int targetRow, int targetCol,
                                                     int startRow, int startCol);
-    bool                                searchNearNeighbors(int** grid, int& curRow, int& curCol, int curDist);
-    bool                                searchNode(int** grid, int row, int col, int curDist);
+    bool                                searchNearNeighbors(int& curRow, int& curCol, int curDist);
+    bool                                searchNode(int row, int col, int curDist);
 
     std::vector<std::string>            getCopyOfInputGrid() const;
 
-
+private:
+    void                                myBuildInternalGrid();
 
 private:
     std::vector<std::string>            myInGrid;
     int                                 myNRows;
     int                                 myNCols;
     int                                 myTotalLength;
-    int                                 mySourceNode;
-    int                                 myTargetNode;
+//    int                                 mySourceNode;
+//    int                                 myTargetNode;
+
+    std::pair<int,int>                  mySourceNode;
+    std::pair<int,int>                  myTargetNode;
+
+    std::vector<std::vector<int>>       myGrid;
 };
 
 #endif // PATHFINDER_H
