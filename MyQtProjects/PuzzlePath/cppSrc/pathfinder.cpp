@@ -217,25 +217,46 @@ bool PathFinder::markNeighbors(int curDist)
     return false;
 }
 
-std::vector<std::pair<int,int>> PathFinder::extractPath(int targetRow, int targetCol,
-                                                        int startRow, int startCol)
+std::vector<std::pair<int,int>> PathFinder::extractPath()
 {
     std::vector<std::pair<int,int>> outPath;
 
-    // Verify we got to target...
-    int curDist = myGrid[targetRow][targetCol];
+    // validate...
+    if (validateInputFile() == false) return outPath;
+
+    // Step 1: Starting with dist=0 at the source node, expand outward
+    //         marking each accessible near neighbor with dist+1.
+    //         repeat until the target is reached, or, no more neighbors
+    //         can be marked.
+    int curDist = 0;
+    setGridNode(mySourceNode.first, mySourceNode.second, curDist);
+
+    // Now expand outward...
+    while (true)
+    {
+        if (markNeighbors(curDist)) break;
+        ++curDist;
+    }
+
+    // Step 2: Verify we got to target...
+    curDist = myGrid[myTargetNode.first][myTargetNode.second];
     if (curDist == -1)
     {
         std::cerr << "Error! Target node unreachable from source!" << std::endl;
         return outPath;
     }
 
-    int curRow = targetRow;
-    int curCol = targetCol;
+    // Step 3: Now go back to the target node, and find the near-neighbor that has a
+    //         dist of 1 less than the previous, and add that node to the output path.
+    //         Repeat until you have reached the source node.
+    int curRow = myTargetNode.first;
+    int curCol = myTargetNode.second;
     while (true)
     {
         --curDist;
-        if (curDist <= 0 || (curRow == startRow && curCol == startCol)) break;
+        if (curDist <= 0 ||
+           (curRow == mySourceNode.first && curCol == mySourceNode.second)) break;
+
         if (searchNearNeighbors(curRow, curCol, curDist))
         {
             outPath.push_back(std::make_pair(curRow, curCol));

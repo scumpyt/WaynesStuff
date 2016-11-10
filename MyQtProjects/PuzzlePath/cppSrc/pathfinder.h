@@ -32,8 +32,11 @@ public:
     std::pair<int,int>                  getTargetNode() const;
 
     bool                                markNeighbors(int curDist);
-    std::vector<std::pair<int,int>>     extractPath(int targetRow, int targetCol,
-                                                    int startRow, int startCol);
+//    std::vector<std::pair<int,int>>     extractPath(int targetRow, int targetCol,
+//                                                    int startRow, int startCol);
+
+    std::vector<std::pair<int,int>>     extractPath();
+
     bool                                searchNearNeighbors(int& curRow, int& curCol, int curDist);
     bool                                searchNode(int row, int col, int curDist);
 
