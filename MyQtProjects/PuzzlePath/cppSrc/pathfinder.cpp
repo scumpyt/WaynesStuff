@@ -4,15 +4,15 @@
 #include <iostream>
 #include <array>
 
-PathFinder::PathFinder(const std::vector<std::string>& inGrid)
-    : myInGrid(inGrid), myNRows(0), myNCols(0), myTotalLength(0)
+PathFinder::PathFinder(const std::vector<std::string>& inTextLines)
+    : myInFile(inTextLines), myNRows(0), myNCols(0), myTotalLength(0)
     , mySourceNode(std::make_pair(-1,-1))
     , myTargetNode(std::make_pair(-1,-1))
 {
-    if (!myInGrid.empty())
+    if (!myInFile.empty())
     {
-        myNRows       = (int)myInGrid.size();
-        myNCols       = (int)myInGrid.at(0).length();
+        myNRows       = (int)myInFile.size();
+        myNCols       = (int)myInFile.at(0).length();
 
         myTotalLength = myNRows * myNCols;
 
@@ -69,7 +69,7 @@ int PathFinder::getTotalLength() const
     return myTotalLength;
 }
 
-bool PathFinder::validateInputGrid()
+bool PathFinder::validateInputFile()
 {
     if (mySourceNode.first == -1 || mySourceNode.second == -1)
     {
@@ -89,7 +89,7 @@ bool PathFinder::validateInputGrid()
 bool PathFinder::findNode(char inChar, int& row, int& col) const
 {
     row = -1;
-    foreach (auto str, myInGrid)
+    foreach (auto str, myInFile)
     {
         ++row;
 
@@ -114,14 +114,14 @@ void PathFinder::setGridNode(int row, int col, int val)
 
 char PathFinder::getChar(int row, int col)
 {
-    if (isValidNode(row, col)) return myInGrid.at(row).at(col);
+    if (isValidNode(row, col)) return myInFile.at(row).at(col);
     return 'X';
 }
 
 void PathFinder::printInGrid() const
 {
     std::cout << "----------------------------\n";
-    foreach (auto str, myInGrid)
+    foreach (auto str, myInFile)
     {
         std::cout << str << "\n";
     }
@@ -302,7 +302,7 @@ bool PathFinder::isTargetNode(int row, int col) const
     return (row == myTargetNode.first && col == myTargetNode.second);
 }
 
-std::vector<std::string> PathFinder::getCopyOfInputGrid() const
+std::vector<std::string> PathFinder::getCopyOfInputFile() const
 {
-    return myInGrid;
+    return myInFile;
 }

@@ -19,6 +19,9 @@ private slots:
 
     void testBasics1();
     void testBasics2();
+    void testFindNode();
+    void testGetChar();
+    void testSearchNode();
 
 private:
     std::vector<std::string> inGrid;

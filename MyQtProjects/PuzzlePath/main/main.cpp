@@ -25,18 +25,18 @@ int main()
         return -1;
     }
 
-    std::vector<std::string> inGrid;
+    std::vector<std::string> inTextLines;
     while (std::getline (inFile, curLine))
     {
-        inGrid.emplace_back(curLine);
-        std::cout << *(inGrid.end()-1) << "\n";     // Echo...
+        inTextLines.emplace_back(curLine);
+        std::cout << *(inTextLines.end()-1) << "\n";     // Echo...
     }
     inFile.close();
 
     // Step 2: Initialize and validate our PathFinder helper object
-    PathFinder pf(inGrid);
+    PathFinder pf(inTextLines);
 
-    if (!pf.validateInputGrid())
+    if (!pf.validateInputFile())
     {
         std::cerr << "Error! Invalid Input file!" << std::endl;
         return -1;
@@ -71,7 +71,7 @@ int main()
     }
 
     // Step 5: Copy input file to solution file, and add dots at every path node.
-    std::vector<std::string> solutionFile = pf.getCopyOfInputGrid();
+    std::vector<std::string> solutionFile = pf.getCopyOfInputFile();
     foreach (auto node, outPath)
     {
         solutionFile.at(node.first).at(node.second) = '.';

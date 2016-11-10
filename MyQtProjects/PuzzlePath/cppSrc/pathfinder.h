@@ -9,14 +9,14 @@
 class CPPSRCSHARED_EXPORT PathFinder
 {
 public:
-    explicit PathFinder(const std::vector<std::string>& inGrid);
+    explicit PathFinder(const std::vector<std::string>& inTextLines);
 
     int                                 getNRows() const;
     int                                 getNCols() const;
     int                                 getTotalLength() const;
     bool                                findNode(char c, int& row, int& col) const;
 
-    bool                                validateInputGrid();
+    bool                                validateInputFile();
 
     void                                setGridNode(int row, int col, int val);
 
@@ -37,13 +37,13 @@ public:
     bool                                searchNearNeighbors(int& curRow, int& curCol, int curDist);
     bool                                searchNode(int row, int col, int curDist);
 
-    std::vector<std::string>            getCopyOfInputGrid() const;
+    std::vector<std::string>            getCopyOfInputFile() const;
 
 private:
     void                                myBuildInternalGrid();
 
 private:
-    std::vector<std::string>            myInGrid;
+    std::vector<std::string>            myInFile;
     int                                 myNRows;
     int                                 myNCols;
     int                                 myTotalLength;
