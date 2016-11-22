@@ -44,3 +44,11 @@ MyQtProjects/NMEA_WorkerThread/build/debug/.moc/moc_bytequeuehelperut.cpp
 MyQtProjects/NMEA_WorkerThread/build/debug/theLib.exp
 MyQtProjects/NMEA_WorkerThread/cppSrc/Makefile
 MyQtProjects/NMEA_WorkerThread/main/Makefile
+MyQtProjects/NMEA_WorkerThread/build/debug/.moc/moc_mainwindow.cpp
+MyQtProjects/NMEA_WorkerThread/build/debug/.moc/moc_nmeathreadmanager.cpp
+MyQtProjects/PuzzlePath/build/debug/.moc/moc_pathfinderut.cpp
+MyQtProjects/PuzzlePath/Makefile
+MyQtProjects/PuzzlePath/UnitTests/Makefile
+MyQtProjects/PuzzlePath/UnitTests/target_wrapper.bat
+MyQtProjects/PuzzlePath/cppSrc/Makefile
+MyQtProjects/PuzzlePath/main/Makefile
