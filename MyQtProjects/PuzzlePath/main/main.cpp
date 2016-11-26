@@ -16,7 +16,7 @@ int main()
     std::cout << std::endl;
 
     std::string curLine;
-    std::string cwd ("");   // If you need to adjust your working I/O dir...
+    std::string cwd ("../../");   // If you need to adjust your working I/O dir...
     std::ifstream inFile (cwd + inFileName);
     if (!inFile.is_open())
     {
