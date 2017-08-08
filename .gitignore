@@ -1,50 +1,124 @@
-build-HelloWorld2-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/
-*.Debug
-*.Release
-MyQtProjects/ProducerConsumer/Makefile
-MyQtProjects/ProducerConsumer/debug/moc_mainwindow.cpp
-MyQtProjects/ProducerConsumer/debug/moc_threadmanager.cpp
-<<<<<<< HEAD
-=======
-MyQtProjects/QtProducerConsumer/Makefile
-MyQtProjects/QtProducerConsumer/debug/moc_mainwindow.cpp
->>>>>>> f0f79e67c64d2dade7633c2b03aebe376f9265ff
 MyQtProjects/CodingTests/CodingTests.pro
 MyQtProjects/CodingTests/main.cpp
+MyQtProjects/ConsoleAppTemplateWithUTs/UnitTests/target_wrapper.bat
+MyQtProjects/ConsoleAppTemplateWithUTs/build/debug/theLib.exp
+MyQtProjects/CurveApp - As Sent To Curve/Makefile
+MyQtProjects/CurveApp - As Sent To Curve/Misc/.ExampleMainRun.swp
+MyQtProjects/CurveApp - As Sent To Curve/UnitTests/Makefile
+MyQtProjects/CurveApp - As Sent To Curve/UnitTests/Makefile.Debug
+MyQtProjects/CurveApp - As Sent To Curve/UnitTests/Makefile.Release
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_maintenancelogut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_misceventut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_oilchangeut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_persistenceenginecsvut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_persistenceenginefactoryut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_persistenceengineut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_scheduledmaintut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_tirerotationut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/build/debug/.moc/moc_vehicleut.cpp
+MyQtProjects/CurveApp - As Sent To Curve/cppSrc/Makefile
+MyQtProjects/CurveApp - As Sent To Curve/cppSrc/Makefile.Debug
+MyQtProjects/CurveApp - As Sent To Curve/cppSrc/Makefile.Release
+MyQtProjects/CurveApp - As Sent To Curve/main/Makefile
+MyQtProjects/CurveApp - As Sent To Curve/main/Makefile.Debug
+MyQtProjects/CurveApp - As Sent To Curve/main/Makefile.Release
+MyQtProjects/CurveApp - June 25 - EOD/Makefile
+MyQtProjects/CurveApp - June 25 - EOD/UnitTests/Makefile
+MyQtProjects/CurveApp - June 25 - EOD/UnitTests/Makefile.Debug
+MyQtProjects/CurveApp - June 25 - EOD/UnitTests/Makefile.Release
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.ApiExplorer.swp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_maintenancelogut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_misceventut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_oilchangeut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_persistenceenginecsvut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_persistenceenginefactoryut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_persistenceengineut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_scheduledmaintut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_tirerotationut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/build/debug/.moc/moc_vehicleut.cpp
+MyQtProjects/CurveApp - June 25 - EOD/cppSrc/Makefile
+MyQtProjects/CurveApp - June 25 - EOD/cppSrc/Makefile.Debug
+MyQtProjects/CurveApp - June 25 - EOD/cppSrc/Makefile.Release
+MyQtProjects/CurveApp - June 25 - EOD/main/Makefile
+MyQtProjects/CurveApp - June 25 - EOD/main/Makefile.Debug
+MyQtProjects/CurveApp - June 25 - EOD/main/Makefile.Release
+MyQtProjects/CurveApp - June 26 - Mid Day/Makefile
+MyQtProjects/CurveApp - June 26 - Mid Day/UnitTests/Makefile
+MyQtProjects/CurveApp - June 26 - Mid Day/UnitTests/Makefile.Debug
+MyQtProjects/CurveApp - June 26 - Mid Day/UnitTests/Makefile.Release
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_maintenancelogut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_misceventut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_oilchangeut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_persistenceenginecsvut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_persistenceenginefactoryut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_persistenceengineut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_scheduledmaintut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_tirerotationut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/build/debug/.moc/moc_vehicleut.cpp
+MyQtProjects/CurveApp - June 26 - Mid Day/cppSrc/Makefile
+MyQtProjects/CurveApp - June 26 - Mid Day/cppSrc/Makefile.Debug
+MyQtProjects/CurveApp - June 26 - Mid Day/cppSrc/Makefile.Release
+MyQtProjects/CurveApp - June 26 - Mid Day/main/Makefile
+MyQtProjects/CurveApp - June 26 - Mid Day/main/Makefile.Debug
+MyQtProjects/CurveApp - June 26 - Mid Day/main/Makefile.Release
+MyQtProjects/CurveApp/Makefile
+MyQtProjects/CurveApp/UnitTests/Makefile
+MyQtProjects/CurveApp/UnitTests/Makefile.Debug
+MyQtProjects/CurveApp/UnitTests/Makefile.Release
+MyQtProjects/CurveApp/build/debug/.moc/moc_maintenancelogut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_misceventut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_oilchangeut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_persistenceenginecsvut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_persistenceenginefactoryut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_persistenceengineut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_scheduledmaintut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_tirerotationut.cpp
+MyQtProjects/CurveApp/build/debug/.moc/moc_vehicleut.cpp
+MyQtProjects/CurveApp/cppSrc/Makefile
+MyQtProjects/CurveApp/cppSrc/Makefile.Debug
+MyQtProjects/CurveApp/cppSrc/Makefile.Release
+MyQtProjects/CurveApp/main/Makefile
+MyQtProjects/CurveApp/main/Makefile.Debug
+MyQtProjects/CurveApp/main/Makefile.Release
 MyQtProjects/HACKERRANK/AccessingInheritedFuncs/AccessingInheritedFuncs.pro
 MyQtProjects/HACKERRANK/AccessingInheritedFuncs/main.cpp
 MyQtProjects/HACKERRANK/MagicSpells/MagicSpells.pro
 MyQtProjects/HACKERRANK/MagicSpells/Makefile
+MyQtProjects/HACKERRANK/MagicSpells/Makefile.Debug
+MyQtProjects/HACKERRANK/MagicSpells/Makefile.Release
 MyQtProjects/HACKERRANK/MagicSpells/main.cpp
 MyQtProjects/HACKERRANK/RectangleArea/RectangleArea.pro
 MyQtProjects/HACKERRANK/RectangleArea/main.cpp
 MyQtProjects/HACKERRANK/TwoChars/TwoChars.pro
 MyQtProjects/HACKERRANK/TwoChars/main.cpp
 MyQtProjects/HACKERRANK/build-TwoChars-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/Makefile
+MyQtProjects/HACKERRANK/build-TwoChars-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/Makefile.Debug
+MyQtProjects/HACKERRANK/build-TwoChars-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/Makefile.Release
 MyQtProjects/InterviewCode/InterviewCode.pro
 MyQtProjects/InterviewCode/main.cpp
-<<<<<<< HEAD
-MyQtProjects/QtProducerConsumer/Makefile
-MyQtProjects/QtProducerConsumer/debug/moc_mainwindow.cpp
-=======
->>>>>>> f0f79e67c64d2dade7633c2b03aebe376f9265ff
-MyQtProjects/QtProducerConsumer/debug/moc_threadmanager.cpp
-MyQtProjects/QtWorkerThread/Makefile
-MyQtProjects/QtWorkerThread/debug/moc_mainwindow.cpp
-MyQtProjects/QtWorkerThread/debug/moc_worker.cpp
-<<<<<<< HEAD
-MyQtProjects/WorkerThread/Makefile
-=======
-MyQtProjects/build-WorkerThread-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/Makefile
-MyQtProjects/build-WorkerThread-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/debug/moc_mainwindow.cpp
-MyQtProjects/WorkerThread/Makefile
-MyQtProjects/ConsoleAppTemplateWithUTs/UnitTests/target_wrapper.bat
-MyQtProjects/ConsoleAppTemplateWithUTs/build/debug/theLib.exp
->>>>>>> e59dd2f2352b8227876bb90993f283abcf107824
 MyQtProjects/NMEA_WorkerThread/UnitTests/target_wrapper.bat
 MyQtProjects/NMEA_WorkerThread/build/debug/theLib.exp
+MyQtProjects/ProducerConsumer/Makefile
+MyQtProjects/ProducerConsumer/Makefile.Debug
+MyQtProjects/ProducerConsumer/Makefile.Release
+MyQtProjects/ProducerConsumer/debug/moc_mainwindow.cpp
+MyQtProjects/ProducerConsumer/debug/moc_threadmanager.cpp
 MyQtProjects/PuzzlePath/UnitTests/target_wrapper.bat
-MyQtProjects/build-PuzzlePath-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/build/debug/theLib.exp
-MyQtProjects/build-PuzzlePath-Clone_of_Desktop_Qt_5_7_0_MSVC2013_64bit-Debug/main/Makefile
 MyQtProjects/PuzzlePath/out_Puzzle1.txt
 MyQtProjects/PuzzlePath/out_Puzzle2.txt
+MyQtProjects/PuzzlePath2/Makefile
+MyQtProjects/PuzzlePath2/UnitTests/Makefile
+MyQtProjects/PuzzlePath2/UnitTests/Makefile.Debug
+MyQtProjects/PuzzlePath2/UnitTests/Makefile.Release
+MyQtProjects/PuzzlePath2/cppSrc/Makefile
+MyQtProjects/PuzzlePath2/cppSrc/Makefile.Debug
+MyQtProjects/PuzzlePath2/cppSrc/Makefile.Release
+MyQtProjects/PuzzlePath2/main/Makefile
+MyQtProjects/PuzzlePath2/main/Makefile.Debug
+MyQtProjects/PuzzlePath2/main/Makefile.Release
+MyQtProjects/QtProducerConsumer/Makefile
+MyQtProjects/QtProducerConsumer/Makefile.Debug
+MyQtProjects/QtProducerConsumer/Makefile.Release
+MyQtProjects/QtProducerConsumer/debug/moc_mainwindow.cpp
+MyQtProjects/QtProducerConsumer/debug/moc_threadmanager.cpp
+MyQtProjects/WorkerThread/Makefile
