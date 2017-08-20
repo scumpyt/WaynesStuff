@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>007_48px.png</file>
+        <file>Batman_48px.png</file>
+        <file>Camera Automation_48px.png</file>
+        <file>Canada_48px.png</file>
+        <file>Chrome_48px.png</file>
+        <file>Closed Sign_48px.png</file>
+        <file>Facebook_48px.png</file>
+        <file>Gmail_48px.png</file>
+        <file>Gun_48px.png</file>
+        <file>Hockey_48px.png</file>
+        <file>Lego_48px.png</file>
+        <file>LinkedIn_48px.png</file>
+        <file>Netscape_48px.png</file>
+        <file>Skype_48px.png</file>
+        <file>Tank_48px.png</file>
+        <file>Tooth_48px.png</file>
+        <file>Twitter_48px.png</file>
+        <file>Wikipedia_48px.png</file>
+    </qresource>
+</RCC>

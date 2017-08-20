@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Page1.qml</file>
+        <file>Page1Form.ui.qml</file>
+        <file>Carousel0.qml</file>
+        <file>Carousel1.qml</file>
+        <file>Carousel2.qml</file>
+        <file>Carousel3.qml</file>
+        <file>Ellipse.qml</file>
+        <file>model0.qml</file>
+        <file>Carousel4.qml</file>
+        <file>Carousel5.qml</file>
+        <file>Carousel6.qml</file>
+        <file>Ellipse2.qml</file>
+    </qresource>
+</RCC>
