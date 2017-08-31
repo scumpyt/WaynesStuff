@@ -12,6 +12,8 @@
         <file>Carousel4.qml</file>
         <file>Carousel5.qml</file>
         <file>Carousel6.qml</file>
-        <file>Ellipse2.qml</file>
+        <file>Carousel7.qml</file>
+        <file>Carousel8.qml</file>
+        <file>Carousel9.qml</file>
     </qresource>
 </RCC>

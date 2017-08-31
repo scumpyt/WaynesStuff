@@ -22,7 +22,10 @@ ApplicationWindow {
             //Carousel3 {}
             //Carousel4 {}
             //Carousel5 {}
-            Carousel6 {}
+            //Carousel6 {}
+            //Carousel7 {}
+            //Carousel8 {}
+            Carousel9 {}
         }
 
         Page1 {
