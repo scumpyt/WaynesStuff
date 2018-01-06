@@ -1,0 +1,109 @@
+Starting C:\Users\wayne_000\Documents\WaynesStuff\MyQtProjects\CurveApp\build\debug\UnitTests.exe...
+********* Start testing of VehicleUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : VehicleUT::initTestCase()
+PASS   : VehicleUT::testCtor()
+PASS   : VehicleUT::testCopyAndAssignment()
+PASS   : VehicleUT::testPrintOper1()
+PASS   : VehicleUT::testPrintOper2()
+PASS   : VehicleUT::testCompareOpers()
+PASS   : VehicleUT::cleanupTestCase()
+Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of VehicleUT *********
+********* Start testing of OilChangeUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : OilChangeUT::initTestCase()
+PASS   : OilChangeUT::testCtor()
+PASS   : OilChangeUT::testCompareOper()
+PASS   : OilChangeUT::testPrintOper()
+PASS   : OilChangeUT::cleanupTestCase()
+Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of OilChangeUT *********
+********* Start testing of TireRotationUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : TireRotationUT::initTestCase()
+PASS   : TireRotationUT::testCtor()
+PASS   : TireRotationUT::testCompareOper()
+PASS   : TireRotationUT::testPrintOper()
+PASS   : TireRotationUT::cleanupTestCase()
+Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of TireRotationUT *********
+********* Start testing of ScheduledMaintUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : ScheduledMaintUT::initTestCase()
+PASS   : ScheduledMaintUT::testCtor()
+PASS   : ScheduledMaintUT::testCompareOper()
+PASS   : ScheduledMaintUT::testPrintOper()
+PASS   : ScheduledMaintUT::cleanupTestCase()
+Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of ScheduledMaintUT *********
+********* Start testing of MiscEventUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : MiscEventUT::initTestCase()
+PASS   : MiscEventUT::testCtor()
+PASS   : MiscEventUT::testCompareOper()
+PASS   : MiscEventUT::testPrintOper()
+PASS   : MiscEventUT::cleanupTestCase()
+Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of MiscEventUT *********
+********* Start testing of MaintenanceLogUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : MaintenanceLogUT::initTestCase()
+PASS   : MaintenanceLogUT::testCtor()
+PASS   : MaintenanceLogUT::testCreateNewLog()
+PASS   : MaintenanceLogUT::testOpenExistingLog()
+PASS   : MaintenanceLogUT::testDeleteLog()
+PASS   : MaintenanceLogUT::testClose()
+PASS   : MaintenanceLogUT::testSave()
+PASS   : MaintenanceLogUT::testClear()
+PASS   : MaintenanceLogUT::testAddVehicle()
+PASS   : MaintenanceLogUT::testGetVehicle()
+PASS   : MaintenanceLogUT::testUpdateVehicle()
+PASS   : MaintenanceLogUT::testRemoveVehicle()
+PASS   : MaintenanceLogUT::testHasVehicle()
+PASS   : MaintenanceLogUT::testIsVehicleUsed()
+PASS   : MaintenanceLogUT::testGetVehicles()
+PASS   : MaintenanceLogUT::testAddEvent()
+PASS   : MaintenanceLogUT::testGetEvent()
+PASS   : MaintenanceLogUT::testUpdateEvent()
+PASS   : MaintenanceLogUT::testRemoveEvent()
+PASS   : MaintenanceLogUT::testRemoveAllEventsByVehicle()
+PASS   : MaintenanceLogUT::testHasEvent()
+PASS   : MaintenanceLogUT::testGetEvents()
+PASS   : MaintenanceLogUT::testListAllEvents()
+PASS   : MaintenanceLogUT::cleanupTestCase()
+Totals: 24 passed, 0 failed, 0 skipped, 0 blacklisted, 44ms
+********* Finished testing of MaintenanceLogUT *********
+********* Start testing of PersistenceEngineFactoryUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : PersistenceEngineFactoryUT::initTestCase()
+PASS   : PersistenceEngineFactoryUT::testEngineName()
+PASS   : PersistenceEngineFactoryUT::cleanupTestCase()
+Totals: 3 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
+********* Finished testing of PersistenceEngineFactoryUT *********
+********* Start testing of PersistenceEngineCSVUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : PersistenceEngineCSVUT::initTestCase()
+PASS   : PersistenceEngineCSVUT::testCreateNewLog()
+PASS   : PersistenceEngineCSVUT::testOpenExistingLog()
+PASS   : PersistenceEngineCSVUT::testDeleteLog()
+PASS   : PersistenceEngineCSVUT::testLogExists()
+PASS   : PersistenceEngineCSVUT::testWriteVehicles()
+PASS   : PersistenceEngineCSVUT::testWriteEvents()
+PASS   : PersistenceEngineCSVUT::testReadVehicles()
+PASS   : PersistenceEngineCSVUT::testReadEvents()
+PASS   : PersistenceEngineCSVUT::cleanupTestCase()
+Totals: 10 passed, 0 failed, 0 skipped, 0 blacklisted, 24ms
+********* Finished testing of PersistenceEngineCSVUT *********
+********* Start testing of PersistenceEngineUT *********
+Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2013)
+PASS   : PersistenceEngineUT::initTestCase()
+PASS   : PersistenceEngineUT::testParseVehicles()
+PASS   : PersistenceEngineUT::testParseEvents()
+PASS   : PersistenceEngineUT::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 2ms
+********* Finished testing of PersistenceEngineUT *********
+=====================================================================
+============================= ALL OK! ===============================
+=====================================================================
+C:\Users\wayne_000\Documents\WaynesStuff\MyQtProjects\CurveApp\build\debug\UnitTests.exe exited with code 0
