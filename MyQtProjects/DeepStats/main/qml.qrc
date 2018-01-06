@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>SummaryPage.qml</file>
+        <file>ListPage.qml</file>
+        <file>CalendarComponent.qml</file>
+        <file>MyButton.qml</file>
+    </qresource>
+</RCC>
