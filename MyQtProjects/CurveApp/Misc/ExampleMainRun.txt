@@ -1,0 +1,93 @@
+Starting C:\Users\wayne_000\Documents\WaynesStuff\MyQtProjects\CurveApp\build\debug\main.exe...
+ApiExplorer::openExistingAndRead ----------------------- START ---------------------
+NOW HAVE 4 VEHICLES...
+VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+NOW HAVE 6 EVENTS...
+EVENT,1,Misc Event,11/16/16,Kramer Mazda,134321,Replace front wipers.,20, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6, --- on --- ,VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12, --- on --- ,VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+EVENT,4,Scheduled Event,04/23/17,Bonavista Esso,135123,Cabin filter replaced.,170,40000,24,CABIN_AIR_FILTER, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,5,Scheduled Event,04/23/17,Bonavista Esso,135123,Coolant flushed.,60,20000,18,COOLANT_FLUSH, --- on --- ,VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+ApiExplorer::openExistingAndRead -----------------------  END  ---------------------
+
+ApiExplorer::showVehicleListingOptions ----------------------- START ---------------------
+--- Vehicle listing option 1 - call convenience function to list all:
+VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+--- Vehicle listing option 2 - call getVehicles and do manually:
+VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+--- Vehicle listing option 3 - Manually filter for only GAS Vehicles, say:
+VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+ApiExplorer::showVehicleListingOptions -----------------------  END  ---------------------
+
+ApiExplorer::showEventListingOptions ----------------------- START ---------------------
+--- Event listing option 1 - call convenience function to list all:
+EVENT,1,Misc Event,11/16/16,Kramer Mazda,134321,Replace front wipers.,20, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6, --- on --- ,VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12, --- on --- ,VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+EVENT,4,Scheduled Event,04/23/17,Bonavista Esso,135123,Cabin filter replaced.,170,40000,24,CABIN_AIR_FILTER, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,5,Scheduled Event,04/23/17,Bonavista Esso,135123,Coolant flushed.,60,20000,18,COOLANT_FLUSH, --- on --- ,VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+--- Event listing option 2 - call getEvents and manually list Events ONLY:
+EVENT,1,Misc Event,11/16/16,Kramer Mazda,134321,Replace front wipers.,20,
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12,
+EVENT,4,Scheduled Event,04/23/17,Bonavista Esso,135123,Cabin filter replaced.,170,40000,24,CABIN_AIR_FILTER,
+EVENT,5,Scheduled Event,04/23/17,Bonavista Esso,135123,Coolant flushed.,60,20000,18,COOLANT_FLUSH,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5,
+--- Event listing option 3 - manually filter on Shop=='Kramer Mazda', say:
+EVENT,1,Misc Event,11/16/16,Kramer Mazda,134321,Replace front wipers.,20,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5,
+ApiExplorer::showEventListingOptions -----------------------  END  ---------------------
+
+ApiExplorer::updateExistingRecord ----------------------- START ---------------------
+--- List all BEFORE update...
+EVENT,1,Misc Event,11/16/16,Kramer Mazda,134321,Replace front wipers.,20, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6, --- on --- ,VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12, --- on --- ,VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+EVENT,4,Scheduled Event,04/23/17,Bonavista Esso,135123,Cabin filter replaced.,170,40000,24,CABIN_AIR_FILTER, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,5,Scheduled Event,04/23/17,Bonavista Esso,135123,Coolant flushed.,60,20000,18,COOLANT_FLUSH, --- on --- ,VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+--- List all AFTER update...
+EVENT,1,Misc Event,11/16/16,Little Shop Of Horrors!,134321,Replace front wipers.,20, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6, --- on --- ,VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12, --- on --- ,VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+EVENT,4,Scheduled Event,04/23/17,Bonavista Esso,135123,Cabin filter replaced.,170,40000,24,CABIN_AIR_FILTER, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,5,Scheduled Event,04/23/17,Bonavista Esso,135123,Coolant flushed.,60,20000,18,COOLANT_FLUSH, --- on --- ,VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+ApiExplorer::updateExistingRecord -----------------------  END  ---------------------
+
+ApiExplorer::removeEntries ----------------------- START ---------------------
+--- List all BEFORE removing...
+EVENT,1,Misc Event,11/16/16,Kramer Mazda,134321,Replace front wipers.,20, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6, --- on --- ,VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12, --- on --- ,VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+EVENT,4,Scheduled Event,04/23/17,Bonavista Esso,135123,Cabin filter replaced.,170,40000,24,CABIN_AIR_FILTER, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,5,Scheduled Event,04/23/17,Bonavista Esso,135123,Coolant flushed.,60,20000,18,COOLANT_FLUSH, --- on --- ,VEHICLE,Wayne's Toy,Tesla,Roadster,2017,5000,ELECTRIC,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+--- List all AFTER removing Id 5...
+EVENT,1,Misc Event,11/16/16,Kramer Mazda,134321,Replace front wipers.,20, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6, --- on --- ,VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12, --- on --- ,VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+EVENT,4,Scheduled Event,04/23/17,Bonavista Esso,135123,Cabin filter replaced.,170,40000,24,CABIN_AIR_FILTER, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+EVENT,6,Misc Event,06/15/17,Kramer Mazda,136004,Ignition Knob replaced.,5, --- on --- ,VEHICLE,Wayne's Car,Mazda,CX9,2010,137000,GAS,
+--- List all AFTER removing all Events for 'Wayne's Car'...
+EVENT,2,Oil Change,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,75,3000,6, --- on --- ,VEHICLE,Work Truck,Ford,F350,2012,45000,DIESEL,
+EVENT,3,Tire Rotation,04/23/17,Bonavista Esso,135123,Regular Spring/Autumn stuff.,125,10000,12, --- on --- ,VEHICLE,The Van,Mazda,MX5,2002,225000,GAS,
+ApiExplorer::removeEntries -----------------------  END  ---------------------
+
+ApiExplorer::tryToAddOilChangeToElectricCar ----------------------- START ---------------------
+MaintenanceLog::addEvent: Oil Change not allowed for Electric vehicles. Not added.
+ApiExplorer::tryToAddOilChangeToElectricCar -----------------------  END  ---------------------
+
+C:\Users\wayne_000\Documents\WaynesStuff\MyQtProjects\CurveApp\build\debug\main.exe exited with code 0
